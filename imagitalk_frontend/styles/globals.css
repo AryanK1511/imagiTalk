@@ -1,13 +1,14 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("https://use.typekit.net/exu3mxs.css");
 
 /************ Default Css ************/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "kohinoor", sans-serif;
+  font-family: "kohinoor", sans-serif !important;
 }
 
 html {
@@ -19,9 +20,8 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: #4654C1 !important;
+  background-color: #4654c1 !important;
   color: white !important;
-  font-family: "Centra", sans-serif !important;
 }
 
 h1,
@@ -41,11 +41,12 @@ a,
 li,
 button,
 ul {
-  color: white;
+  color: white !important;
   margin: 0;
   padding: 0;
   line-height: normal;
-  text-decoration: none;
+  text-decoration: none !important;
+  font-weight: bolder;
 }
 
 a:hover {
@@ -170,7 +171,6 @@ button:not(.start-chatting-btn) {
   right: 10px;
 }
 
-
 /** Home Css **/
 .home-body-text-block {
   padding-left: 10vw;
@@ -181,14 +181,18 @@ button:not(.start-chatting-btn) {
   font-size: 4vw;
 }
 .home-body-text-block p {
-  font-size: 1.2vw;
-  line-height: 1.5; /* Adjust the value to increase or decrease line spacing */
-
+  font-size: 1.4vw;
+  line-height: 1.5 !important; /* Adjust the value to increase or decrease line spacing */
 }
 .start-chatting-btn {
-  background-color: #F77B63 !important;
+  background-color: #f77b63 !important;
   font-size: large;
-  font-weight: bolder ;
+  font-weight: bolder;
+  color: #fff;
+  border-top-left-radius: 4vw !important;
+  border-top-right-radius: 4vw !important;
+  border-bottom-left-radius: 6vw !important; /* Adjust the value for more rounding */
+  border-bottom-right-radius: 6vw !important;
 }
 
 /** Navbar Css **/
@@ -197,4 +201,27 @@ button:not(.start-chatting-btn) {
 }
 .nav-link:hover {
   text-decoration: underline;
+}
+figure {
+  position: absolute;
+}
+#figure1 {
+  top: 28vw;
+  left: 57vw;
+}
+#figure2 {
+  top: 40vw;
+  left: 80vw;
+}
+#figure3 {
+  top: 20vw;
+  left: 82vw;
+}
+#figure4 {
+  top: 12vw;
+  left: 65vw;
+}
+#figure5 {
+  top: 40vw;
+  left: 65vw;
 }
