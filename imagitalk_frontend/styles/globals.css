@@ -21,7 +21,7 @@ body {
   overflow-x: hidden;
   position: relative;
   background-color: #4654c1 !important;
-  color: white !important;
+  color: white;
 }
 
 h1,

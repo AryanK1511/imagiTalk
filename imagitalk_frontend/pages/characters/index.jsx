@@ -8,7 +8,7 @@ const CharacterPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    fetch("https://46ce-192-12-181-55.ngrok-free.app/api/characters")
+    fetch("http://localhost:8000/api/characters")
       .then((response) => response.json())
       .then((data) => {
         setCharacters(data.characters || []); // Ensure data.characters is defined
