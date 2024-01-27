@@ -5,11 +5,9 @@ const CharacterChat = ({ characterId }) => {
   const [character, setCharacter] = useState(null);
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState("");
-  const [cohereAPIPrompt, setCohereAPIPrompt] = useState("");
-  const [cohereAPIResponse, setCohereAPIResponse] = useState("");
+  const [tempInputMessage, setTempInputMessage] = useState("");
 
   useEffect(() => {
-    // Fetch character data from the backend
     fetch(`http://localhost:8000/api/characters/${characterId}`)
       .then((response) => response.json())
       .then((data) => {
@@ -19,66 +17,42 @@ const CharacterChat = ({ characterId }) => {
   }, [characterId]);
 
   const sendMessage = async (e) => {
+    setTempInputMessage(inputMessage);
+    setInputMessage(""); // Clear the input field after sending the message
     e.preventDefault();
+    if (tempInputMessage.trim() === "") return;
 
-    if (inputMessage.trim() === "") return;
-
-    // Add the user message to the messages array
-    setMessages((messages) => [
+    // Add the user message to the messages array immediately
+    const newMessages = [
       ...messages,
-      { text: inputMessage, sender: "user" },
-    ]);
+      { text: tempInputMessage, sender: "user" },
+    ];
+    setMessages(newMessages);
 
-    // Construct the prompt for the cohere API
-    const prompt = `You are ${character?.character_name}. Act like it! ${inputMessage}`;
 
-    // Prepare the request body
-    const body = {
-      data: prompt,
-    };
+    const prompt = `You are ${character?.character_name}. Act like it! ${tempInputMessage}`;
 
     try {
-      // Make the POST request to the cohere API
-      const response = await fetch(
-        "http://localhost:8000/api/cohere/generate",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(body),
-        }
-      );
+      const response = await fetch("http://localhost:8000/api/cohere/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ data: prompt }),
+      });
 
-      // Await the response from the API
+
       const data = await response.json();
 
-      // Update the cohereAPIResponse state with the result from the API
-      setCohereAPIResponse(data.result);
-
       // Add the API response to the messages array
-      setMessages((msgs) => [
-        ...msgs,
+      setMessages((currentMessages) => [
+        ...currentMessages,
         { text: data.result, sender: "character" },
       ]);
     } catch (error) {
       console.error("Error:", error);
     }
 
-    // Reset the input field
-    setInputMessage("");
-
-    if (inputMessage.trim() === "") return;
-    setMessages([...messages, { text: inputMessage, sender: "user" }]);
-    setInputMessage("");
-
-    // Handle character response here (mocked for this example)
-    setTimeout(() => {
-      setMessages((msgs) => [
-        ...msgs,
-        { text: `Hello! I'm ${character?.name}`, sender: "character" },
-      ]);
-    }, 1000);
   };
 
   if (!character) return <div>Loading character...</div>;
@@ -86,12 +60,13 @@ const CharacterChat = ({ characterId }) => {
   return (
     <div className={styles.characterChatContainer}>
       <div className={styles.characterPanel}>
-        <img src={character.character_picture} alt={character.name} />
+        {/* Make sure to use the correct property for the image alt text */}
+        <img src={character.character_picture} alt={character.character_name} />
       </div>
       <div className={styles.chatPanel}>
         <div className="messages">
           {messages.map((msg, index) => (
-            <div key={index} className={`${styles.message} ${msg.sender}`}>
+            <div key={index} className={`${styles.message} ${msg.sender === "user" ? styles.user : styles.character}`}>
               {msg.text}
             </div>
           ))}
@@ -99,8 +74,8 @@ const CharacterChat = ({ characterId }) => {
         <form onSubmit={sendMessage} className={styles.heroForm}>
           <input
             type="text"
-            value={inputMessage}
-            onChange={(e) => setInputMessage(e.target.value)}
+            value={tempInputMessage}
+            onChange={(e) => setTempInputMessage(e.target.value)}
             placeholder="Type your message here..."
             className={styles.heroInput}
           />
