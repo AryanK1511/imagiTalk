@@ -24,7 +24,7 @@ const CharacterChat = ({ characterId }) => {
 
     // Handle character response here (mocked for this example)
     setTimeout(() => {
-      setMessages(msgs => [...msgs, { text: `Hello! I'm ${character?.name}`, sender: 'character' }]);
+      setMessages(msgs => [...msgs, { text: `Hello! I'm ${character?.character_name}`, sender: 'character' }]);
     }, 1000);
   };
 
@@ -33,7 +33,7 @@ const CharacterChat = ({ characterId }) => {
   return (
     <div className={styles.characterChatContainer}>
       <div className={styles.characterPanel}>
-        <img src={character.image} alt={character.name} />
+        <img src={character.character_picture} alt={character.name} />
       </div>
       <div className={styles.chatPanel}>
         <div className="messages">
