@@ -14,11 +14,8 @@ const Navbar = () => {
         <Nav.Link className={`${styles.navLinkCustom}`} href="/">
           HOME
         </Nav.Link>
-        <Nav.Link
-          className={`${styles.navLinkCustom}`}
-          href="https://2452-192-12-181-28.ngrok-free.app/login"
-        >
-          SIGN IN
+        <Nav.Link className={`${styles.navLinkCustom}`} href="/api/auth/login">
+          Login
         </Nav.Link>
       </Nav>
     </BootstrapNavbar>
