@@ -1,0 +1,200 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/************ Default Css ************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "kohinoor", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #4654C1 !important;
+  color: white !important;
+  font-family: "Centra", sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+p,
+a,
+li,
+button,
+ul {
+  color: white;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/** Chat **/
+.chat {
+  height: 100vh;
+  background-color: #4654c1;
+}
+.character-info {
+  border-radius: 0 8% 8% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  background-color: #f77b63;
+
+  /* BOX SHADOW PROPERTIES*/
+  box-shadow: -10px;
+  box-shadow: -10px -4px;
+  box-shadow: -10px -4px 40px;
+  box-shadow: -10px -4px 40px 1px;
+  box-shadow: -10px -4px 40px 1px #000000;
+  box-shadow: -10px -4px 40px 15px #000000 / 0.1;
+}
+.character-info p {
+  font-size: 30px;
+  font-weight: bold;
+  color: #282828;
+  padding-top: 20px;
+}
+.character-icon-wrapper {
+  padding: 30px 0;
+}
+.character-icon {
+  width: 230px;
+  height: 230px;
+  border-radius: 20px;
+  border: 3px solid #424242;
+  background-color: #fff;
+}
+.character-icon img {
+  width: 200px;
+  height: 200px;
+}
+.chat-history,
+.character-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chat-history {
+  flex-direction: column;
+}
+.chat-history-btn,
+.create-chat-btn {
+  min-width: 200px;
+  height: 55px;
+  background-color: #fff;
+  border-radius: 40px;
+  color: #282828;
+  font-weight: bold;
+  font-size: 22px;
+  margin: 12px 0;
+  text-transform: uppercase;
+}
+.create-chat-btn {
+  min-width: 250px;
+  height: 60px;
+}
+.chat-input-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+.chat-input-wrapper form {
+  position: absolute;
+  bottom: 30px;
+  width: 60%;
+  height: 60px;
+}
+.chat-input-wrapper p {
+  font-weight: bold;
+  font-size: 40px;
+  color: #fff;
+  opacity: 80%;
+}
+
+form {
+  position: relative;
+  width: 100px;
+  height: 30px;
+}
+textarea {
+  width: 100%;
+  padding: 20px;
+}
+button:not(.start-chatting-btn) {
+  position: absolute;
+  right: 10px;
+}
+
+
+/** Home Css **/
+.home-body-text-block {
+  padding-left: 10vw;
+  padding-bottom: 10vw;
+  font-weight: lighter;
+}
+.home-body-text-block h1 {
+  font-size: 4vw;
+}
+.home-body-text-block p {
+  font-size: 1.2vw;
+  line-height: 1.5; /* Adjust the value to increase or decrease line spacing */
+
+}
+.start-chatting-btn {
+  background-color: #F77B63 !important;
+  font-size: large;
+  font-weight: bolder ;
+}
+
+/** Navbar Css **/
+.logo {
+  max-height: 10vw;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
