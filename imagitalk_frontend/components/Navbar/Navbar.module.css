@@ -1,9 +1,12 @@
 .navbarCustom {
-  background-color: #4654C1; /* Dark background */
+  background-color: #4654c1; /* Dark background */
+  font-weight: 500;
+  text-decoration: underline;
 }
 
 .navbarCustom .logo {
-  height: 8vw; /* Adjust logo size */
+  height: 100%;
+  width: 200px; /* Adjust logo size */
 }
 
 .navLinkCustom {
@@ -15,5 +18,3 @@
 .navLinkCustom:hover {
   text-decoration: underline !important;
 }
-
-
