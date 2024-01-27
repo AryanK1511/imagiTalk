@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "@/components/Navbar/Navbar";
+import styles from "../../components/CharacterChat/CharacterChat.module.css";
 
 const CharacterPage = () => {
   const [characters, setCharacters] = useState([]);
@@ -28,29 +29,31 @@ const CharacterPage = () => {
     <>
       <Navbar />
       <div className="container mx-auto p-5">
-        <h1 className="text-4xl font-bold text-center mb-10 text-gray-800">
-          Character Page
-        </h1>
+        <h1 className={styles.charOptTitle}>Choose character:</h1>
 
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div
+            className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ${styles.charContainer}`}
+          >
             {characters.map((character) => (
               <div
                 key={character.id}
-                className="max-w-sm rounded overflow-hidden shadow-lg bg-white hover:bg-gray-50 cursor-pointer transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl"
+                className={styles.charWrapper}
                 onClick={() => navigateToCharacter(character.id)}
                 role="link"
                 aria-label={`Go to character ${character.character_name}`}
               >
                 <img
-                  className="w-full h-64 object-cover"
+                  className={styles.charImg}
                   src={character.character_picture}
                   alt={character.character_name}
                 />
-                <div className="px-6 py-4">
-                  <div className="font-bold text-xl mb-2 text-gray-900">
+                <div className="px-2 py-2">
+                  <div
+                    className={`font-bold text-xl mb-2 text-gray-900 ${styles.charName}`}
+                  >
                     {character.character_name}
                   </div>
                 </div>
