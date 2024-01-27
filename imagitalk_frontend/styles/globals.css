@@ -41,11 +41,12 @@ a,
 li,
 button,
 ul {
-  color: white;
+  color: white !important;
   margin: 0;
   padding: 0;
   line-height: normal;
-  text-decoration: none;
+  text-decoration: none !important;
+  font-weight: bolder;
 }
 
 a:hover {
@@ -181,14 +182,19 @@ button:not(.start-chatting-btn) {
   font-size: 4vw;
 }
 .home-body-text-block p {
-  font-size: 1.2vw;
-  line-height: 1.5; /* Adjust the value to increase or decrease line spacing */
+  font-size: 1.4vw;
+  line-height: 1.5 !important; /* Adjust the value to increase or decrease line spacing */
 
 }
 .start-chatting-btn {
   background-color: #F77B63 !important;
   font-size: large;
   font-weight: bolder ;
+  color: #fff;
+  border-top-left-radius: 4vw !important;
+  border-top-right-radius: 4vw !important;
+  border-bottom-left-radius: 6vw !important; /* Adjust the value for more rounding */
+  border-bottom-right-radius: 6vw !important;;
 }
 
 /** Navbar Css **/
@@ -197,4 +203,27 @@ button:not(.start-chatting-btn) {
 }
 .nav-link:hover {
   text-decoration: underline;
+}
+figure {
+  position: absolute;
+}
+#figure1 {
+  top: 28vw;
+  left: 57vw;
+}
+#figure2 {
+  top: 40vw;
+  left: 80vw;
+}
+#figure3 {
+  top: 20vw;
+  left: 82vw;
+}
+#figure4 {
+  top: 12vw;
+  left: 65vw;
+}
+#figure5 {
+  top: 40vw;
+  left: 65vw;
 }

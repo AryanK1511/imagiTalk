@@ -1,19 +1,19 @@
 .navbarCustom {
-  background-color: #1a1a1a; /* Dark background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
+  background-color: #4654C1; /* Dark background */
 }
 
 .navbarCustom .logo {
-  height: 50px; /* Adjust logo size */
+  height: 8vw; /* Adjust logo size */
 }
 
 .navLinkCustom {
   color: #f8f9fa !important; /* Light text color */
   font-size: 1.1em; /* Slightly larger font size */
-  margin-left: 20px; /* Space between menu items */
+  margin-right: 4vw; /* Space between menu items */
 }
 
 .navLinkCustom:hover {
-  color: #007bff !important; /* Highlight color on hover */
-  transition: color 0.3s; /* Smooth transition for hover effect */
+  text-decoration: underline !important;
 }
+
+
