@@ -5,6 +5,7 @@ from flask_cors import CORS
 
 # Initialize Flask App
 app = Flask(__name__)
+
 # This will enable CORS for all routes and domains
 CORS(app, supports_credentials=True)  
 
