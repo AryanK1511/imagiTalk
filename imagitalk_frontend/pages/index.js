@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar/Navbar";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import Link from "next/link";
 
 // Homepage
 export default function Home() {
@@ -22,7 +23,9 @@ export default function Home() {
               <br /> interactive storytelling.
             </p>
             <Button className="start-chatting-btn px-5 mt-2">
-              <a href="/characters">CHAT</a>
+              <Link legacyBehavior href="/characters">
+                <a>CHAT</a>
+              </Link>
             </Button>
           </Col>
         </Row>
