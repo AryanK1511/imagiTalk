@@ -29,18 +29,19 @@ const CharacterChat = ({ characterId }) => {
     ];
     setMessages(newMessages);
 
-
     const prompt = `You are ${character?.character_name}. Act like it! ${tempInputMessage}`;
 
     try {
-      const response = await fetch("http://localhost:8000/api/cohere/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ data: prompt }),
-      });
-
+      const response = await fetch(
+        "http://localhost:8000/api/cohere/generate",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ data: prompt }),
+        }
+      );
 
       const data = await response.json();
 
@@ -65,7 +66,12 @@ const CharacterChat = ({ characterId }) => {
       <div className={styles.chatPanel}>
         <div className="messages">
           {messages.map((msg, index) => (
-            <div key={index} className={`${styles.message} ${msg.sender === "user" ? styles.user : styles.character}`}>
+            <div
+              key={index}
+              className={`${styles.message} ${
+                msg.sender === "user" ? styles.user : styles.character
+              }`}
+            >
               {msg.text}
             </div>
           ))}
