@@ -8,10 +8,14 @@ const CharacterChat = ({ characterId }) => {
 
   useEffect(() => {
     // Fetch character data from the backend
-    fetch(`http://localhost:8000/api/characters/${characterId}`) // Replace with your API URL
+    fetch(`http://localhost:8000/api/characters/${characterId}`)
       .then((response) => response.json())
       .then((data) => {
-        setCharacter(data.character);
+        console.log("Data from API:", data);
+        if (data.character) {
+          console.log("Character data:", data.character);
+          setCharacter(data.character);
+        }
       })
       .catch((error) => console.error("Error fetching character:", error));
   }, [characterId]);
