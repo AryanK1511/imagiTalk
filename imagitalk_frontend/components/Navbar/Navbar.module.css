@@ -1,7 +1,8 @@
 .navbarCustom {
   background-color: #4654c1; /* Dark background */
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: underline;
+  text-transform: uppercase;
 }
 
 .navbarCustom .logo {

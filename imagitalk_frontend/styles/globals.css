@@ -1,7 +1,7 @@
+@import url("https://use.typekit.net/exu3mxs.css");
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import url("https://use.typekit.net/exu3mxs.css");
 
 /************ Default Css ************/
 * {
@@ -13,15 +13,14 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 75px;
 }
 
 body {
-  font-weight: 400;
   overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100vh;
   position: relative;
   background-color: #4654c1 !important;
-  color: white !important;
 }
 
 h1,
@@ -71,18 +70,23 @@ select:focus {
 
 /** HOME **/
 .home-body-text-block {
-  padding-left: 10vw;
-  padding-bottom: 10vw;
+  padding: 100px;
   font-weight: lighter;
 }
 .home-body-text-block h1 {
-  font-size: 4vw;
+  font-weight: 500;
+  color: #fff;
+  font-size: 64px;
 }
 .home-body-text-block p {
-  font-size: 1.4vw;
-  line-height: 1.5 !important; /* Adjust the value to increase or decrease line spacing */
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1.5;
+  padding: 20px 0; /* Adjust the value to increase or decrease line spacing */
 }
 .start-chatting-btn {
+  height: 50px;
+  width: 200px;
   background-color: #f77b63 !important;
   font-size: large;
   font-weight: bolder;
@@ -91,6 +95,10 @@ select:focus {
   border-top-right-radius: 4vw !important;
   border-bottom-left-radius: 6vw !important; /* Adjust the value for more rounding */
   border-bottom-right-radius: 6vw !important;
+  border: 0;
+}
+.start-chatting-btn a {
+  font-size: 22px;
 }
 figure {
   position: absolute;
@@ -100,7 +108,7 @@ figure {
   left: 57vw;
 }
 #figure2 {
-  top: 40vw;
+  top: 41vw;
   left: 80vw;
 }
 #figure3 {

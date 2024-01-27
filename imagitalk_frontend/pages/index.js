@@ -5,7 +5,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 // Homepage
 export default function Home() {
   return (
-    <>
+    <div className="home-wrapper">
       <Navbar />
       <Container fluid className="m-5 home-body">
         <Row className="home-body-text-block">
@@ -42,6 +42,6 @@ export default function Home() {
       <figure id="figure5">
         <img src="assets/images/figures/Polygon1.png" alt="Figure 5" />
       </figure>
-    </>
+    </div>
   );
 }
