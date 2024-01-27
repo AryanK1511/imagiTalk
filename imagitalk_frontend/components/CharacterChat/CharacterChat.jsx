@@ -52,7 +52,6 @@ const CharacterChat = ({ characterId }) => {
     } catch (error) {
       console.error("Error:", error);
     }
-
   };
 
   if (!character) return <div>Loading character...</div>;
