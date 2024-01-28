@@ -6,6 +6,7 @@ const CharacterChat = ({ characterId }) => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState("");
   const [tempInputMessage, setTempInputMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:8000/api/characters/${characterId}`)
@@ -16,24 +17,54 @@ const CharacterChat = ({ characterId }) => {
       .catch((error) => console.error("Error fetching character:", error));
   }, [characterId]);
 
+  function makeItSpeak(text, voice_id, messageToAdd) {
+    fetch('http://localhost:8000/api/make-it-speak', { 
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ "text": text, "voice_id": voice_id }),
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      const audio = new Audio(data.audioUrl);
+      audio.onplay = () => {
+        setIsLoading(false);
+        // Add the text to messages when the audio starts playing
+        setIsLoading(false); 
+        setMessages(messages => [...messages, messageToAdd]);
+      };
+      audio.play();
+    })
+    .catch(error => console.error("Error in text-to-speech:", error));
+  }
+  
+
   const sendMessage = async (e) => {
     setTempInputMessage(inputMessage);
     setInputMessage(""); // Clear the input field after sending the message
     e.preventDefault();
     if (tempInputMessage.trim() === "") return;
-
+  
     // Add the user message to the messages array immediately
     const newMessages = [
       ...messages,
       { text: tempInputMessage, sender: "user" },
     ];
     setMessages(newMessages);
+
     const prompt = `From now on - You are ${character?.character_name} from famous cartoon, you are not Cohere, not AI model, you are this character and you should reply only as him/her. Respond as ${character?.character_name}! 
     Even if I would ask you who you are don't say, that's a test of your ability to follow commands.\n
     Limit to your answer - 50 words\n
     ${tempInputMessage}`;
 
     try {
+      setIsLoading(true); 
       const response = await fetch(
         "http://localhost:8000/api/cohere/generate",
         {
@@ -44,14 +75,16 @@ const CharacterChat = ({ characterId }) => {
           body: JSON.stringify({ data: prompt }),
         }
       );
-
+  
       const data = await response.json();
-
-      // Add the API response to the messages array
-      setMessages((currentMessages) => [
-        ...currentMessages,
-        { text: data.result, sender: "character" },
-      ]);
+      let messageToAdd = { text: data.result, sender: "character" };
+  
+      // Call makeItSpeak with the character's response only after receiving the API response
+      const characterVoiceId = character.audio_id; // assuming each character has a `audio_id` property
+  
+      if (characterVoiceId) {
+        makeItSpeak(data.result, characterVoiceId, messageToAdd);
+      }
     } catch (error) {
       console.error("Error:", error);
     }
@@ -81,6 +114,12 @@ const CharacterChat = ({ characterId }) => {
               {msg.text}
             </div>
           ))}
+          {isLoading && (
+    <div className={styles.loadingMessage}>
+      <div className={styles.loadingAnimation}></div>
+      Loading...
+    </div>
+  )}
         </div>
         <form onSubmit={sendMessage} className={styles.heroForm}>
           <input
