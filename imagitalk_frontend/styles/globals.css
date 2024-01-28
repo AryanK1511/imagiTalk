@@ -96,10 +96,15 @@ select:focus {
   border-top-right-radius: 4vw !important;
   border-bottom-left-radius: 6vw !important; /* Adjust the value for more rounding */
   border-bottom-right-radius: 6vw !important;
-  border: 0;
+  transition: 0.2s ease-in !important;
+}
+.start-chatting-btn:hover {
+  transform: scale(1.1) !important;
 }
 .start-chatting-btn a {
   font-size: 22px;
+  border: 0;
+  outline: none;
 }
 figure {
   position: absolute;

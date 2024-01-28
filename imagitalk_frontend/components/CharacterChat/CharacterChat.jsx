@@ -55,7 +55,7 @@ const CharacterChat = ({ characterId }) => {
     }
   };
 
-  if (!character) return <div>Loading character...</div>;
+  if (!character) return <div>.</div>; // Loading character..
 
   return (
     <div className={styles.characterChatContainer}>

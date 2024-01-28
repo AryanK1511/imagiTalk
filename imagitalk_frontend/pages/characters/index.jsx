@@ -32,7 +32,7 @@ const CharacterPage = () => {
         <h1 className={styles.charOptTitle}>Choose character:</h1>
 
         {loading ? (
-          <p>Loading...</p>
+          <p>{""}</p> // Loading..
         ) : (
           <div
             className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ${styles.charContainer}`}
