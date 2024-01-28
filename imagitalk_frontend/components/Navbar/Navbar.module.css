@@ -1,0 +1,31 @@
+.navbarCustom {
+  background-color: #4654c1; /* Dark background */
+  font-weight: 400;
+  text-decoration: underline;
+  text-transform: uppercase;
+  margin: 0 100px;
+}
+
+.navbarCustom .logo {
+  height: 100%;
+  width: 300px; /* Adjust logo size */
+}
+
+.navLinkCustom {
+  color: #f8f9fa !important; /* Light text color */
+  font-size: 1.5em; /* Slightly larger font size */
+  margin-right: 4vw; /* Space between menu items */
+}
+
+.navLinkCustom:hover {
+  text-decoration: underline !important;
+}
+
+/** Navbar Css **/
+
+.logo {
+  max-height: 10vw;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}

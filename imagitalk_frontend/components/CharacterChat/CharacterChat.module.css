@@ -1,0 +1,158 @@
+/* Choose character */
+
+.charOptTitle {
+  font-size: 48px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.charWrapper {
+  transition: transform 0.4s ease-in, box-shadow 0.3s ease-in;
+  background-color: #fff;
+  border-radius: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  border: 3px solid #424242;
+  max-height: 400px;
+}
+.charWrapper:hover {
+  transform: scale(1.1);
+}
+.charImg {
+  max-width: 200px;
+  height: 80%;
+  padding-top: 20px;
+}
+.chatOptWrapper{
+  overflow-y: auto;
+}
+
+/* CharacterChat */
+.characterChatContainer {
+  height: 85vh;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.characterPanel {
+  text-align: center;
+  cursor: pointer;
+  background-color: #f77b63;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 24px;
+  width: 25vw;
+  border-radius: 0 30px 30px 0;
+  box-shadow: 5px 0 15px rgba(0.4, 0.4, 0, 0.4);
+}
+.charName{
+  text-align: center;
+}
+.characterPanelText {
+  color: #fff !important;
+  margin-top: 50px;
+  font-size: 30px;
+  padding: 0 10px;
+}
+.characterPanelImg {
+  max-height: 80%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.chatPanel {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+  padding-bottom: 80px;
+}
+
+.messages {
+  flex-grow: 1;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.message {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 90%;
+}
+
+.message.user {
+  background-color: #d1e7dd;
+  align-self: flex-end;
+}
+
+.message.character {
+  background-color: #fefae0;
+  align-self: flex-start;
+}
+
+.heroForm {
+  width: 70vw;
+  position: fixed;
+  bottom: 20px;
+  left: 27vw;
+  display: flex;
+  gap: 10px;
+}
+
+.heroInput {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.heroButton {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.heroButton:hover {
+  background-color: #0056b3;
+  color: #424242;
+}
+
+.loadingMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  color: #aaa;
+}
+
+.loadingAnimation {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 4px solid #ddd;
+  border-top-color: #888;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
