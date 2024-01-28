@@ -7,7 +7,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 # This will enable CORS for all routes and domains
-CORS(app, supports_credentials=True)  
+CORS(app, support_credentials=True)
 
 # Setup Config
 app.config.from_object(Config)
@@ -16,4 +16,4 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 
 # from app.routes import user_routes, cohere_routes
-from app.routes import user_routes, character_routes, cohere_routes
+from app.routes import user_routes, character_routes, cohere_routes, google_cloud_routes

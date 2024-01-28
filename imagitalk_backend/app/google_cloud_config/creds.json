@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "imagitalk",
+  "private_key_id": "945e2d0551405a5b5624e817c7451628ff62062e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCxdup28TX0WIth\ncIdC1m6DAVTrrcuLFWUa9x4CaCJmxmFiLdyANa45ReLEAQ4WXjjIOXa2FEoJigSz\nBaiohPHK/epiorVYsxMLYQfRUPSyLYWhY+WRJeJ0DeBVzmvCU1He3RquHZ9jgKil\njDGpbObvkfR0s9AqQZ3z9A9NYxdl7RcaJPaqUmmmHFDuyYDn4IShRzKuQvgz2XDw\ntcRFrYRjSb2jhUy2j8Kh/bz76PlgS9N71J3cRUm/QrPgHdmEiLwDIIF+i6dYG9HL\n3q5b+Vi+03tmPWBODBRK9ydQBWVjE8eDffNC9y9+E3zLgltAvzrm8oNDJMfxa2Z3\nFYVUP1mDAgMBAAECggEAPcc+ZwqgdD/wwYp5Y+CfFxb7F5JoZbIcgM8fEMpsk2ej\nFhkOBknprUFxaDdPzqSdUsKCW29juL9l1GZ3aLbjL33GPvESfV7VleQA4zKyBGcJ\nen36uFU+aJU+D9DsvXjg6tsAwzVHu81ZqEvOLANfv22Jcqj4IgW2tWq0ewWwawgQ\ne675ulO4jVYh3Qv2+SxsRAyYlKIEj77AVpllACJL3Q3OeGMvuOfmD97AAPGQzE2p\nOVOStVnTNJiVUpPkOduPlOsq2a77NTR0Go+Fj2arjNPwMoVXHYEHSWVa69yyzLr3\n2zpTnG4PfxsATUQpgjEd2ZdmfPhHs50Tw2DsBwtcaQKBgQD5s4UZ6Mne1iWl5ehk\nJ4//bjhr8SSKBSJzwvdzetYZAX3dVB6IXvoZXdasfzHin5DVHp0sewAG710gCjaJ\nONiDfPlAIoG4nUWpKfjBs9LC99uAoZ8ynpuE+mUaKzeURTmQLDFd8v8v/W7HfBbo\nDaW7q08uzsyAL9Ay83SsKqPtiwKBgQC18OrWA7FMS1XtDRESAuDWyvOR2KdoY7gP\nRLz07R48HCKKc3VJHk/Fn8YMtBtHI5TrsVBrmK9MVX1v2STeSFXwFmgo57l366VT\nzgdWynkU+N5IiQGZmrlnIidNk9nBDf0VkcT2luIUK2ug3kj56JdYTLJWRhKDIJ87\nHeoBFNUy6QKBgQCTUwrl9YYdlsXRsutBJGJ+d36MmVNQp6TjHhY3qTLmwA2N55K4\nLSlsjAQb9FPvfOvMAmsDknK6pMGSJNR2c/ay5ap9354f2ZL/MwdU6g8g/3If27v8\n9r2VYNMD9JmvPoSu/pQF9VgA7YtN4XX2Zg7xwipO2K6ptwwk86VT6zia7wKBgEzu\n0l4ssYvRT0QtgkpbbTdmGhhRxHgfsnTCXCQ1H9PLEc/5gl6ospKePOCiR+aM5SvE\njnzw0y8z9xaUe0KC09PxpZmmYoaS3hXRyMiqVQjJMzT4ufR5uGwjxPrIygsYHyw/\nt0mOA4sD0T70v2btMxHjXIWem7VW1f3paEmMxZoBAoGAFMTu/0AoTv1FuXh8VGuu\n/W0VDgbPxc52SYFfX8yHme20sewMAomhwaLL63EIq+Cp0+Gp6dpoPnMn59kiln52\n1nkXrnEil8hRWWin8ifJcqkNu5N3JdXUAj4EJsyCXg7DFC6d9F5+U6lzDfBVFb+A\nf1w/mj9m0kHunzibvr5NbPk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "test-account@imagitalk.iam.gserviceaccount.com",
+  "client_id": "110907358920377015547",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/test-account%40imagitalk.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
