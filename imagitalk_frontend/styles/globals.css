@@ -106,6 +106,9 @@ select:focus {
   border: 0;
   outline: none;
 }
+
+/* Figures */
+
 figure {
   position: absolute;
   animation: float 6s ease-in-out infinite;
@@ -155,6 +158,8 @@ figure {
   top: 40vw;
   left: 65vw;
 }
+
+/* Animation */
 
 @keyframes figure2 {
   0% {
