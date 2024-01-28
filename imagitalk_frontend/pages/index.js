@@ -31,19 +31,13 @@ export default function Home() {
         </Row>
       </Container>
       <figure id="figure1">
-        <img src="assets/images/figures/Vector1.png" alt="Figure 1" />
+        <img src="assets/images/figures/figure1.svg" alt="Figure 1" />
       </figure>
-      <figure id="figure2">
-        <img src="assets/images/figures/Ellipse7.png" alt="Figure 2" />
-      </figure>
-      <figure id="figure3">
-        <img src="assets/images/figures/Rectangle8.png" alt="Figure 3" />
-      </figure>
-      <figure id="figure4">
-        <img src="assets/images/figures/Rectangle9.png" alt="Figure 4" />
-      </figure>
+      <figure id="figure2"> </figure>
+      <figure id="figure3"></figure>
+      <figure id="figure4"> </figure>
       <figure id="figure5">
-        <img src="assets/images/figures/Polygon1.png" alt="Figure 5" />
+        <img src="assets/images/figures/figure2.svg" alt="Figure 2" />
       </figure>
     </div>
   );
