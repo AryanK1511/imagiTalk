@@ -23,7 +23,8 @@ def get_all_characters():
             {
                 "id": character.id,
                 "character_name": character.character_name,
-                "character_picture": character.character_picture
+                "character_picture": character.character_picture,
+                "audio_id": character.audio_id
             } for character in characters]
 
         return jsonify({"message": len(results), "characters": results}), 200
@@ -38,7 +39,8 @@ def get_character_by_id(id):
         return jsonify({"character": {
             "id": character.id,
             "character_name": character.character_name,
-            "character_picture": character.character_picture
+            "character_picture": character.character_picture,
+            "audio_id": character.audio_id
         }}), 200
     except Exception as e:
         return jsonify({"message": "Error occurred while getting character", "error": str(e)}), 400
