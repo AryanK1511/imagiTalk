@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "elevenlabs-node": "^2.0.3"
+    "elevenlabs-node": "^2.0.3",
+    "google": "^2.1.0"
   }
 }
