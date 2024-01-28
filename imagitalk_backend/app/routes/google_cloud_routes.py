@@ -12,6 +12,7 @@ import requests  # You might need to install this package if making direct HTTP 
 from flask_cors import CORS, cross_origin
 from google.cloud import storage
 import uuid
+from ..utils.character_dictionary import characters_dict
 
 # Locating and using env vars
 ENV_FILE = find_dotenv()
@@ -41,17 +42,18 @@ def make_it_speak():
     data = request.json
     text = data['text']
     voice_id = data['voice_id']
-    print(voice_id)
+    character = data['character']
 
     # Set up ElevenLabs API parameters
     eleven_labs_api_url = f'https://api.elevenlabs.io/v1/text-to-speech/{voice_id}' 
     api_key = os.environ.get('E_LABS_API_KEY')
 
     # Send request to ElevenLabs API
+    char_voice_settings = characters_dict[str(character['id'])]
     response = requests.post(eleven_labs_api_url, json={
         "text": text,
         "model_id": "eleven_multilingual_v2",
-        "voice_settings":{"similarity_boost":0.5,"stability":0.5}
+        "voice_settings": char_voice_settings
     }, headers= {
     'xi-api-key': f'{api_key}',
     'Content-Type': 'application/json'

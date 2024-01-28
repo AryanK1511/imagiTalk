@@ -23,7 +23,7 @@ const CharacterChat = ({ characterId }) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ "text": text, "voice_id": voice_id }),
+      body: JSON.stringify({ "text": text, "voice_id": voice_id, "character": character }),
     })
     .then(response => {
       if (!response.ok) {
