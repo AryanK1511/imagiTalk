@@ -60,8 +60,12 @@ const CharacterChat = ({ characterId }) => {
   return (
     <div className={styles.characterChatContainer}>
       <div className={styles.characterPanel}>
-        {/* Make sure to use the correct property for the image alt text */}
-        <img src={character.character_picture} alt={character.character_name} />
+        <img
+          className={styles.characterPanelImg}
+          src={character.character_picture}
+          alt={character.character_name}
+        />
+        <p className={styles.characterPanelText}>{character.character_name}</p>
       </div>
       <div className={styles.chatPanel}>
         <div className="messages">

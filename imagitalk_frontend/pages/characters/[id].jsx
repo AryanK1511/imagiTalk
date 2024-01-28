@@ -9,7 +9,6 @@ const CharacterPage = () => {
   return (
     <div>
       <Navbar />
-      <h1>Character Page: {id}</h1>
       {/* Call the component and pass the id */}
       <CharacterChat characterId={id} />
     </div>
