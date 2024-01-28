@@ -9,6 +9,7 @@ ImagiTalk is an innovative web application that combines nostalgia and cutting-e
 | [App Demo]()      |      |
 | [DevPost]()       |      |
 | [How to use?]()   |      |
+| [Tech Stack]()    |      |
 | [Documentation]() |      |
 
 ### Team Members
