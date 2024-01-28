@@ -6,6 +6,7 @@ const CharacterChat = ({ characterId }) => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState("");
   const [tempInputMessage, setTempInputMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:8000/api/characters/${characterId}`)
@@ -16,7 +17,7 @@ const CharacterChat = ({ characterId }) => {
       .catch((error) => console.error("Error fetching character:", error));
   }, [characterId]);
 
-  function makeItSpeak(text, voice_id) {
+  function makeItSpeak(text, voice_id, messageToAdd) {
     fetch('http://localhost:8000/api/make-it-speak', { 
       method: 'POST',
       headers: {
@@ -31,8 +32,13 @@ const CharacterChat = ({ characterId }) => {
       return response.json();
     })
     .then(data => {
-      // Assuming the backend returns a URL to the audio file
       const audio = new Audio(data.audioUrl);
+      audio.onplay = () => {
+        setIsLoading(false);
+        // Add the text to messages when the audio starts playing
+        setIsLoading(false); 
+        setMessages(messages => [...messages, messageToAdd]);
+      };
       audio.play();
     })
     .catch(error => console.error("Error in text-to-speech:", error));
@@ -58,6 +64,7 @@ const CharacterChat = ({ characterId }) => {
     ${tempInputMessage}`;
 
     try {
+      setIsLoading(true); 
       const response = await fetch(
         "http://localhost:8000/api/cohere/generate",
         {
@@ -70,18 +77,13 @@ const CharacterChat = ({ characterId }) => {
       );
   
       const data = await response.json();
-  
-      // Add the API response to the messages array
-      setMessages((currentMessages) => [
-        ...currentMessages,
-        { text: data.result, sender: "character" },
-      ]);
+      let messageToAdd = { text: data.result, sender: "character" };
   
       // Call makeItSpeak with the character's response only after receiving the API response
       const characterVoiceId = character.audio_id; // assuming each character has a `audio_id` property
   
       if (characterVoiceId) {
-        makeItSpeak(data.result, characterVoiceId);
+        makeItSpeak(data.result, characterVoiceId, messageToAdd);
       }
     } catch (error) {
       console.error("Error:", error);
@@ -112,6 +114,12 @@ const CharacterChat = ({ characterId }) => {
               {msg.text}
             </div>
           ))}
+          {isLoading && (
+    <div className={styles.loadingMessage}>
+      <div className={styles.loadingAnimation}></div>
+      Loading...
+    </div>
+  )}
         </div>
         <form onSubmit={sendMessage} className={styles.heroForm}>
           <input
