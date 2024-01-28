@@ -16,21 +16,44 @@ const CharacterChat = ({ characterId }) => {
       .catch((error) => console.error("Error fetching character:", error));
   }, [characterId]);
 
+  function makeItSpeak(text, voice_id) {
+    fetch('http://localhost:8000/api/make-it-speak', { 
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ "text": text, "voice_id": voice_id }),
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Assuming the backend returns a URL to the audio file
+      const audio = new Audio(data.audioUrl);
+      audio.play();
+    })
+    .catch(error => console.error("Error in text-to-speech:", error));
+  }
+  
+
   const sendMessage = async (e) => {
     setTempInputMessage(inputMessage);
     setInputMessage(""); // Clear the input field after sending the message
     e.preventDefault();
     if (tempInputMessage.trim() === "") return;
-
+  
     // Add the user message to the messages array immediately
     const newMessages = [
       ...messages,
       { text: tempInputMessage, sender: "user" },
     ];
     setMessages(newMessages);
-
+  
     const prompt = `You are ${character?.character_name}. Act like it! ${tempInputMessage}`;
-
+  
     try {
       const response = await fetch(
         "http://localhost:8000/api/cohere/generate",
@@ -42,14 +65,21 @@ const CharacterChat = ({ characterId }) => {
           body: JSON.stringify({ data: prompt }),
         }
       );
-
+  
       const data = await response.json();
-
+  
       // Add the API response to the messages array
       setMessages((currentMessages) => [
         ...currentMessages,
         { text: data.result, sender: "character" },
       ]);
+  
+      // Call makeItSpeak with the character's response only after receiving the API response
+      const characterVoiceId = character.audio_id; // assuming each character has a `audio_id` property
+  
+      if (characterVoiceId) {
+        makeItSpeak(data.result, characterVoiceId);
+      }
     } catch (error) {
       console.error("Error:", error);
     }
