@@ -28,7 +28,7 @@ const CharacterPage = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto p-5">
+      <div className="container mx-auto p-5 chatOptWrapper">
         <h1 className={styles.charOptTitle}>Choose character:</h1>
 
         {loading ? (

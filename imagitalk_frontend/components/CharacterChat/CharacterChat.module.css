@@ -1,4 +1,5 @@
 /* Choose character */
+
 .charOptTitle {
   font-size: 48px;
   color: #fff;
@@ -23,8 +24,10 @@
 .charImg {
   max-width: 200px;
   height: 80%;
-  border-radius: 20%;
   padding-top: 20px;
+}
+.chatOptWrapper{
+  overflow-y: auto;
 }
 
 /* CharacterChat */
@@ -36,6 +39,7 @@
 }
 
 .characterPanel {
+  text-align: center;
   cursor: pointer;
   background-color: #f77b63;
   display: flex;
@@ -46,6 +50,9 @@
   width: 25vw;
   border-radius: 0 30px 30px 0;
   box-shadow: 5px 0 15px rgba(0.4, 0.4, 0, 0.4);
+}
+.charName{
+  text-align: center;
 }
 .characterPanelText {
   color: #424242 !important;

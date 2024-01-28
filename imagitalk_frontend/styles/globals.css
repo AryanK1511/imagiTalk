@@ -15,9 +15,16 @@ html {
   scroll-behavior: smooth;
 }
 
+.homeWrapper {
+  overflow: hidden;
+  height: 100vh; /* Viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   height: 100vh;
   position: relative;
   background-color: #4654c1 !important;

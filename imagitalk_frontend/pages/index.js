@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar/Navbar";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Link from "next/link";
 
 // Homepage
 export default function Home() {
+
+  useEffect(() => {
+    const body = document.body;
+    body.style.overflowY = "hidden";
+    return () => {
+      body.style.overflowY = "";
+    };
+  }, []);
+
   return (
-    <div className="home-wrapper">
+    <div className="homeWrapper">
       <Navbar />
       <Container fluid className="m-5 home-body">
         <Row className="home-body-text-block">
@@ -18,9 +27,7 @@ export default function Home() {
               from the past.
             </h1>
             <p>
-              Just type out the name of the character you want to <br />
-              talk to and explore the endless possibilities of
-              <br /> interactive storytelling.
+            Discover the magic of connecting with your beloved characters in<br/> just a few clicks. Engage with your favourite fictional universes.
             </p>
             <Button className="start-chatting-btn px-5 mt-2">
               <Link legacyBehavior href="/characters">
