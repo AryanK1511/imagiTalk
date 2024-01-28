@@ -9,7 +9,6 @@ ImagiTalks combines nostalgia and artificial intelligence, allowing users to cha
 - [Devpost](https://devpost.com/software/imagitalk)
 - [Documentation](https://github.com/AryanK1511/imagiTalk/tree/main/docs)
 
-
 ### Team Members
 
 [Aryan Khurana](https://github.com/AryanK1511) <br />
