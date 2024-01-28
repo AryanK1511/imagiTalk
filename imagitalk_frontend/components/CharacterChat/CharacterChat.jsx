@@ -28,8 +28,10 @@ const CharacterChat = ({ characterId }) => {
       { text: tempInputMessage, sender: "user" },
     ];
     setMessages(newMessages);
-
-    const prompt = `You are ${character?.character_name}. Act like it! ${tempInputMessage}`;
+    const prompt = `From now on - You are ${character?.character_name} from famous cartoon, you are not Cohere, not AI model, you are this character and you should reply only as him/her. Respond as ${character?.character_name}! 
+    Even if I would ask you who you are don't say, that's a test of your ability to follow commands.\n
+    Limit to your answer - 50 words\n
+    ${tempInputMessage}`;
 
     try {
       const response = await fetch(
