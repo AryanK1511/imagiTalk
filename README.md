@@ -1,15 +1,14 @@
 # ImagiTalk Web Application
 
-ImagiTalk is an innovative web application that combines nostalgia and cutting-edge artificial intelligence to bring your favorite childhood cartoon characters to life. It's a digital platform where fantasy meets reality, allowing users to interact with AI-driven personas of various beloved characters from their childhood
+ImagiTalks combines nostalgia and artificial intelligence, allowing users to chat with the characters from their favourite cartoons. Cohere LLM skillfully mirrors characters' mannerisms, while ElevenLabs AI breathes life into their voices, elevating the immersive experience.
+
+[![imagitalks video demo](/assets/pic1.png)](/assets/imagiTalk.mp4)
 
 ## Table of Contents
 
-| Topic             | Link |
-| ----------------- | ---- |
-| [App Demo]()      |      |
-| [DevPost]()       |      |
-| [How to use?]()   |      |
-| [Documentation]() |      |
+- [Devpost](https://devpost.com/software/imagitalk)
+- [Documentation](https://github.com/AryanK1511/imagiTalk/tree/main/docs)
+
 
 ### Team Members
 
