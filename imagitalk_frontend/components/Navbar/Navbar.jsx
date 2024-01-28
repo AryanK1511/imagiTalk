@@ -14,9 +14,9 @@ const Navbar = () => {
         <Nav.Link className={`${styles.navLinkCustom}`} href="/">
           HOME
         </Nav.Link>
-        <Nav.Link className={`${styles.navLinkCustom}`} href="/api/auth/login">
+        {/* <Nav.Link className={`${styles.navLinkCustom}`} href="/api/auth/login">
           Login
-        </Nav.Link>
+        </Nav.Link> */}
       </Nav>
     </BootstrapNavbar>
   );
