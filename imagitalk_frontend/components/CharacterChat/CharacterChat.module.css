@@ -55,7 +55,10 @@
   text-align: center;
 }
 .characterPanelText {
-  color: #424242 !important;
+  color: #fff !important;
+  margin-top: 50px;
+  font-size: 30px;
+  padding: 0 10px;
 }
 .characterPanelImg {
   max-height: 80%;
